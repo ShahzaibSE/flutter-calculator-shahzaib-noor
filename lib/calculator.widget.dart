@@ -9,252 +9,365 @@ class _Calculator extends State {
   @override
   Widget build(BuildContext context){
     return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          const SizedBox(width:200),
-          Container(
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+      child: Container(
+          padding: EdgeInsets.only(bottom: 20, top: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(width:400),
+              Container(
+                padding: EdgeInsets.only(top: 10, bottom: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350]),
+                        ),
+                        child: Text('7',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.black
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('7'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350]),
+                        ),
+                        child: Text('8',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.black
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('8'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350]),
+                        ),
+                        child: Text('9',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.black
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('9'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350]),
+                        ),
+                        child: Text('/',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.teal[400]
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('/'),
-                    onPressed: (){},
-                  )
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+              ),
+              Container(
+                padding: EdgeInsets.only(top: 10, bottom: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350]),
+                        ),
+                        child: Text('4',
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.black
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('4'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350])
+                        ),
+                        child: Text('5',
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.black
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('5'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350])
+                        ),
+                        child: Text('6',
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.black
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('6'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350])
+                        ),
+                        child: Text('x',
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.teal[400]
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('x'),
-                    onPressed: (){},
-                  )
-                ),
-              ],
-            )
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                  ],
+                )
+              ),
+              Container(
+                padding: EdgeInsets.only(top: 10, bottom: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350])
+                        ),
+                        child: Text('3',
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.black
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('3'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350])
+                        ),
+                        child: Text('2',
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.black
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('2'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350])
+                        ),
+                        child: Text('1',
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.black
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('1'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350])
+                        ),
+                        child: Text('+',
+                          style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.teal[400]
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('+'),
-                    onPressed: (){},
-                  )
-                ),
-              ],
-            )
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                  ],
+                )
+              ),
+              Container(
+                padding: EdgeInsets.only(top: 10, bottom: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.red[400])
+                        ),
+                        child: Text('C',
+                          style: TextStyle(
+                                fontSize: 30,
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('C'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350])
+                        ),
+                        child: Text('0',
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.black
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('0'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.green[400])
+                        ),
+                        child: Text('=',
+                          style: TextStyle(
+                              fontSize: 30,
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('.'),
-                    onPressed: (){},
-                  )
-                ),
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: ElevatedButton(
-                    style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                    ),
+                    Container(
+                      width: 70,
+                      height: 70,
+                      child: ElevatedButton(
+                        style: ButtonStyle(shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)
+                          )
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.grey[350])
+                        ),
+                        child: Text('-',
+                          style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.teal[400]
+                          ),
+                        ),
+                        onPressed: (){},
                       )
-                    )),
-                    child: Text('='),
-                    onPressed: (){},
-                  )
-                ),
-              ],
-            )
-          ),
-        ]
+                    ),
+                  ],
+                )
+              ),
+            ]
+          )
       )
     );
   }
