@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class Calculator extends StatefulWidget {
 
@@ -22,11 +23,12 @@ class _Calculator extends State<Calculator> {
               const SizedBox(width:400),
               Container(
                 margin: const EdgeInsets.only(bottom: 120, top: 20),
-                child: Text(result,
-                  style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.black
-                  ),
+                child: Text(result, 
+                  style:TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold
+                  )
                 )
               ),
               Column(
