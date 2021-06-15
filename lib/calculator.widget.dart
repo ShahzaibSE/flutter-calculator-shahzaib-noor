@@ -8,21 +8,6 @@ class Calculator extends StatefulWidget {
 
 class _Calculator extends State<Calculator> {
   var result = '';
-  clear() {
-    setState(() {
-      result = '';
-    });
-  }
-  //
-  calculate() {
-    Parser p = Parser();
-    Expression exp = p.parse(result);
-    ContextModel cm = ContextModel();
-    double eval = exp.evaluate(EvaluationType.REAL, cm);
-    setState(() {
-      result = eval.toString();
-    });
-  }
   
   @override
   Widget build(BuildContext context){
@@ -44,21 +29,19 @@ class _Calculator extends State<Calculator> {
                   ),
                 )
               ),
-              Container(
-                child: Text('234',
-                  style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.grey
-                  )
-                )
-              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   IconButton(
                     icon: const Icon(Icons.backspace_outlined),
                     tooltip: 'Delete',
-                    onPressed: (){},
+                    onPressed: (){
+                      setState((){
+                         if((result != null) && (result.length > 0)){
+                           result = result.substring(0, result.length - 1);
+                         }
+                      });
+                    },
                   )
               ]),
               Divider(
