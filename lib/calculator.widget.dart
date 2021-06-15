@@ -10,7 +10,7 @@ class _Calculator extends State {
   Widget build(BuildContext context){
     return Container(
       child: Container(
-          padding: EdgeInsets.only(bottom: 20, top: 20),
+          margin: EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
