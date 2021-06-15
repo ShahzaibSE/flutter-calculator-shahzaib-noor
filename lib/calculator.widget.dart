@@ -1,21 +1,69 @@
 import 'package:flutter/material.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 class Calculator extends StatefulWidget {
 
   _Calculator createState() => _Calculator();
 }
 
-class _Calculator extends State {
+class _Calculator extends State<Calculator> {
+  var result = '';
+  clear() {
+    setState(() {
+      result = '';
+    });
+  }
+  //
+  calculate() {
+    Parser p = Parser();
+    Expression exp = p.parse(result);
+    ContextModel cm = ContextModel();
+    double eval = exp.evaluate(EvaluationType.REAL, cm);
+    setState(() {
+      result = eval.toString();
+    });
+  }
+  
   @override
   Widget build(BuildContext context){
+    //
     return Container(
       child: Container(
           margin: EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
               const SizedBox(width:400),
+              Container(
+                margin: const EdgeInsets.only(bottom: 120, top: 20),
+                child: Text(result,
+                  style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.black
+                  ),
+                )
+              ),
+              Container(
+                child: Text('234',
+                  style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.grey
+                  )
+                )
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.backspace_outlined),
+                    tooltip: 'Delete',
+                    onPressed: (){},
+                  )
+              ]),
+              Divider(
+                color: Colors.teal[300],
+              ),
               Container(
                 padding: EdgeInsets.only(top: 10, bottom: 10),
                 child: Row(
@@ -38,7 +86,11 @@ class _Calculator extends State {
                             color: Colors.black
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '7';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -58,7 +110,11 @@ class _Calculator extends State {
                             color: Colors.black
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                           setState(() {
+                            result = result + '8';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -78,7 +134,11 @@ class _Calculator extends State {
                             color: Colors.black
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '9';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -98,7 +158,11 @@ class _Calculator extends State {
                             color: Colors.teal[400]
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '/';
+                          });
+                        },
                       )
                     ),
                   ],
@@ -126,7 +190,11 @@ class _Calculator extends State {
                               color: Colors.black
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '4';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -146,7 +214,11 @@ class _Calculator extends State {
                               color: Colors.black
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '5';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -166,7 +238,11 @@ class _Calculator extends State {
                               color: Colors.black
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '6';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -186,7 +262,11 @@ class _Calculator extends State {
                               color: Colors.teal[400]
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result +'*';
+                          });
+                        },
                       )
                     ),
                   ],
@@ -214,7 +294,11 @@ class _Calculator extends State {
                               color: Colors.black
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '3';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -234,7 +318,11 @@ class _Calculator extends State {
                               color: Colors.black
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '2';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -254,7 +342,11 @@ class _Calculator extends State {
                               color: Colors.black
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '1';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -274,7 +366,11 @@ class _Calculator extends State {
                                 color: Colors.teal[400]
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '+';
+                          });
+                        },
                       )
                     ),
                   ],
@@ -301,7 +397,11 @@ class _Calculator extends State {
                                 fontSize: 30,
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState((){
+                            result = '';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -321,7 +421,11 @@ class _Calculator extends State {
                               color: Colors.black
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState(() {
+                            result = result + '0';
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -340,7 +444,15 @@ class _Calculator extends State {
                               fontSize: 30,
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          Parser p = Parser();
+                          Expression exp = p.parse(result);
+                          ContextModel cm = ContextModel();
+                          double eval = exp.evaluate(EvaluationType.REAL, cm);
+                          setState(() {
+                            result = eval.toString();
+                          });
+                        },
                       )
                     ),
                     Container(
@@ -360,7 +472,11 @@ class _Calculator extends State {
                                 color: Colors.teal[400]
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          setState((){
+                            result = result + '-';
+                          });
+                        },
                       )
                     ),
                   ],
