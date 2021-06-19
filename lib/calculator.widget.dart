@@ -9,6 +9,7 @@ class Calculator extends StatefulWidget {
 
 class _Calculator extends State<Calculator> {
   var result = '';
+  var expression = '';
   
   @override
   Widget build(BuildContext context){
@@ -22,7 +23,17 @@ class _Calculator extends State<Calculator> {
             children: <Widget>[
               const SizedBox(width:400),
               Container(
-                margin: const EdgeInsets.only(bottom: 120, top: 20),
+                margin: const EdgeInsets.only(bottom: 150, top: 20),
+                child: Text(expression, 
+                  style:TextStyle(
+                    color: Colors.grey,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold
+                  )
+                )
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 50,top: 20),
                 child: Text(result, 
                   style:TextStyle(
                     color: Colors.black,
@@ -39,8 +50,8 @@ class _Calculator extends State<Calculator> {
                     tooltip: 'Delete',
                     onPressed: (){
                       setState((){
-                         if((result != null) && (result.length > 0)){
-                           result = result.substring(0, result.length - 1);
+                         if((expression != null) && (expression.length > 0)){
+                           expression = expression.substring(0, expression.length - 1);
                          }
                       });
                     },
@@ -73,7 +84,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '7';
+                            expression = expression + '7';
                           });
                         },
                       )
@@ -97,7 +108,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                            setState(() {
-                            result = result + '8';
+                            expression = expression + '8';
                           });
                         },
                       )
@@ -121,7 +132,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '9';
+                            expression = expression + '9';
                           });
                         },
                       )
@@ -145,7 +156,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '/';
+                            expression = expression + '/';
                           });
                         },
                       )
@@ -177,7 +188,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '4';
+                            expression = expression + '4';
                           });
                         },
                       )
@@ -201,7 +212,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '5';
+                            expression = expression + '5';
                           });
                         },
                       )
@@ -225,7 +236,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '6';
+                            expression = expression + '6';
                           });
                         },
                       )
@@ -249,7 +260,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result +'*';
+                            expression = expression +'*';
                           });
                         },
                       )
@@ -281,7 +292,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '3';
+                            expression = expression + '3';
                           });
                         },
                       )
@@ -305,7 +316,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '2';
+                            expression = expression + '2';
                           });
                         },
                       )
@@ -329,7 +340,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '1';
+                            expression = expression + '1';
                           });
                         },
                       )
@@ -353,7 +364,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '+';
+                            expression = expression + '+';
                           });
                         },
                       )
@@ -384,6 +395,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState((){
+                            expression = '';
                             result = '';
                           });
                         },
@@ -408,7 +420,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState(() {
-                            result = result + '0';
+                            expression = expression + '0';
                           });
                         },
                       )
@@ -431,7 +443,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           Parser p = Parser();
-                          Expression exp = p.parse(result);
+                          Expression exp = p.parse(expression);
                           ContextModel cm = ContextModel();
                           double eval = exp.evaluate(EvaluationType.REAL, cm);
                           setState(() {
@@ -459,7 +471,7 @@ class _Calculator extends State<Calculator> {
                         ),
                         onPressed: (){
                           setState((){
-                            result = result + '-';
+                            expression = expression + '-';
                           });
                         },
                       )
